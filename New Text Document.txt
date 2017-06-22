@@ -1,0 +1,162 @@
+﻿1
+System.out.println("Nhập vào n: ");
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		for(int i = 1; i <= n; i++)
+			for(int j = 1; j <= i; j++)
+				if(j == i) System.out.println("*");
+				else  System.out.print("*");
+2
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào tháng: ");
+		int month = sc.nextInt();
+		System.out.println("Nhập vào năm: ");
+		int year = sc.nextInt();
+		if(year % 4 == 0)
+			if(month == 1 || month == 3 || month == 5 
+			|| month == 7 || month == 8 || month == 10 || month == 12)
+				System.out.println("Tháng "+month+" năm "+year+" có 31 ngày");
+			else if(month == 2 ) 
+				System.out.println("Tháng "+month+" năm "+year+" có 29 ngày");
+			else 
+				System.out.println("Tháng "+month+" năm "+year+" có 30 ngày");
+		else 
+			if(month == 1 || month == 3 || month == 5 
+			|| month == 7 || month == 8 || month == 10 || month == 12)
+				System.out.println("Tháng "+month+" năm "+year+" có 31 ngày");
+			else if(month == 2 ) 
+				System.out.println("Tháng "+month+" năm "+year+" có 28 ngày");
+			else 
+				System.out.println("Tháng "+month+" năm "+year+" có 30 ngày");
+3
+Scanner sc = new Scanner(System.in);
+		float s = 0;
+		System.out.println("Nhập vào n: ");
+		int n = sc.nextInt();
+		for(int i = 1; i <= n; i++)
+			s+=(float)1/i;
+		System.out.println("Tổng S = "+s);
+4
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào n: ");
+		int n = sc.nextInt();
+		float s = 15;
+		for(int i = 1; i <= n; i++)
+			s+= Math.pow(-1,i)/giaiThua(i);
+		System.out.println("Tổng S = "+s);
+public static int giaiThua(int i) {
+		int s = 1;
+		for(int j = 1; j <= i; j++)
+			s*=j;
+		return s;
+	}
+5
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào n:");
+		int n = sc.nextInt();
+		float s = 0 ;
+		for(int i = 1; i <= 2*n - 1; i+=2)
+			s+= (float)1/giaiThua(i);
+		System.out.println("Tổng S= "+s);
+public static int giaiThua(int n) {
+		int s = 1;
+		for(int i = 1; i <= n; i++)
+			s*=i;
+		return s;
+	}
+6
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào n:");
+		int n = sc.nextInt();
+		int s = 1;
+		if(n % 2 == 0 )
+			for(int i = 2; i <= n ; i+=2)
+				s*=i;
+		else
+			for(int i = 1; i <= n ; i+=2)
+				s*=i;
+		System.out.println(n+"!! = "+s);
+7
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào n:");
+		int n = sc.nextInt();
+		int s = 0;
+		int p = 1;
+		do {
+			s+= (n % 10);
+			p*= (n % 10);
+			n = n / 10;
+		} while (n != 0);
+		System.out.println("Tổng s = "+s);
+		System.out.println("Tích p = "+p);
+8
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào a:");
+		int a = sc.nextInt();
+		System.out.println("Nhập vào b:");
+		int b = sc.nextInt();
+		System.out.println("UCLN = "+ucnl(a, b));
+		System.out.println("BCNN = "+a*b/ucnl(a, b));
+public static int ucnl(int a, int b)
+	{
+		int temp;
+		while (b != 0) {
+			temp = a % b;
+			a = b;
+			b = temp;
+		}
+		return a;
+	}
+9
+Scanner sc = new Scanner(System.in);
+		System.out.println("Nhập vào chuỗi: ");
+		String str = "";
+		str = sc.nextLine();
+		System.out.println("Câu a:");
+		for(int i = str.length() -1; i >= 0; i--)
+		{
+			char ch = str.charAt(i);
+			System.out.print(ch);
+		}
+		System.out.println();
+		System.out.println("Câu b:");
+		System.out.println(str.toUpperCase());
+		System.out.println("Câu c:");
+		System.out.println(str.toLowerCase());	
+		char[] array = str.toCharArray(); 
+        str = ""; 
+
+        for(int i = 0; i < array.length; i++) 
+        { 
+            int ascii = array[i]; 
+
+            if(ascii >= 65 && ascii <= 90) 
+            { 
+            	str += (char)(ascii += 32); 
+            } 
+            else if(ascii >= 97 && ascii <= 122) 
+            { 
+            	str += (char)(ascii -= 32); 
+            } 
+            else 
+            { 
+            	str += (char)ascii; 
+            } 
+        } 
+        System.out.println("Câu d:");
+        System.out.println(str);
+10
+Scanner sc = new Scanner(System.in);
+		String str = "";
+		System.out.println("Nhập vào 1 chuỗi bất kì");
+		str = sc.nextLine();
+		System.out.println("Câu a:");
+		for(int i = 0; i < str.length(); i++)
+		{
+			
+			
+			if(str.charAt(i) == ' ' && str.charAt(i+1) != ' ')
+				System.out.println();
+			else System.out.print(str.charAt(i));
+			
+		}
